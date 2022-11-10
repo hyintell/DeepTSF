@@ -34,35 +34,6 @@ Inspired by the stochastic process theory, we design the Auto-Correlation mechan
 
 1. Install Python 3.6, PyTorch 1.9.0.
 2. Download data. You can obtain all the six benchmarks from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/e1ccfff39ad541908bae/) or [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy?usp=sharing). **All the datasets are well pre-processed** and can be used easily.
-3. Train the model. We provide the experiment scripts of all benchmarks under the folder `./scripts`. You can reproduce the experiment results by:
-
-```bash
-bash ./scripts/ETT_script/Autoformer_ETTm1.sh
-bash ./scripts/ECL_script/Autoformer.sh
-bash ./scripts/Exchange_script/Autoformer.sh
-bash ./scripts/Traffic_script/Autoformer.sh
-bash ./scripts/Weather_script/Autoformer.sh
-bash ./scripts/ILI_script/Autoformer.sh
-```
-
-4. Special-designed implementation
-
-- **Speedup Auto-Correlation:** We built the Auto-Correlation mechanism as a batch-normalization-style block to make it more memory-access friendly. See the [paper](https://arxiv.org/abs/2106.13008) for details.
-
-- **Without the position embedding:** Since the series-wise connection will inherently keep the sequential information, Autoformer does not need the position embedding, which is different from Transformers.
-
-### Reproduce with Docker
-
-To easily reproduce the results using Docker, conda and Make,  you can follow the next steps:
-1. Initialize the docker image using: `make init`. 
-2. Download the datasets using: `make get_dataset`.
-3. Run each script in `scripts/` using `make run_module module="bash scripts/ETT_script/Autoformer_ETTm1.sh"` for each script.
-4. Alternatively, run all the scripts at once:
-```
-for file in `ls scripts`; do make run_module module="bash scripts/$script"; done
-```
-### A Simple Example
-See `predict.ipynb` for workflow (in Chinese).
 
 ## Main Results
 
