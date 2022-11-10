@@ -34,15 +34,6 @@ Inspired by the stochastic process theory, we design the Auto-Correlation mechan
 
 1. Install Python 3.6, PyTorch 1.9.0.
 2. Download data. You can obtain all the six benchmarks from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/e1ccfff39ad541908bae/) or [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy?usp=sharing). **All the datasets are well pre-processed** and can be used easily.
-3. Train the model. We provide the experiment scripts of all benchmarks under the folder `./scripts`. You can reproduce the experiment results by:
-
-```bash
-bash ./scripts/ETT_script/Autoformer_ETTm1.sh
-bash ./scripts/ECL_script/Autoformer.sh
-bash ./scripts/Exchange_script/Autoformer.sh
-bash ./scripts/Traffic_script/Autoformer.sh
-bash ./scripts/Weather_script/Autoformer.sh
-bash ./scripts/ILI_script/Autoformer.sh
 ```
 
 4. Special-designed implementation
